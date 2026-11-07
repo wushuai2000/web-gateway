@@ -1,0 +1,16 @@
+{
+  "name": "web-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "description": "web gateway demo",
+  "scripts": {
+    "postinstall": "node setup.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
