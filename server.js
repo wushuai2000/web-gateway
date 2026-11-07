@@ -12,7 +12,9 @@ const PORT = parseInt(process.env.PORT || "3000", 10);
 const INNER_PORT = parseInt(process.env.XRAY_PORT || "10000", 10);
 const UUID = process.env.UUID || "";
 const WS_PATH = process.env.WS_PATH || "/ws";
-const XRAY_BIN = path.join(__dirname, "bin", "xray");
+// XRAY_BIN lets a container image ship the binary at a fixed path
+// (e.g. /usr/local/bin/xray built in a multi-stage Dockerfile).
+const XRAY_BIN = process.env.XRAY_BIN || path.join(__dirname, "bin", "xray");
 
 function writeConfig() {
   const cfg = {
